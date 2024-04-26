@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="square1 square"></div>
+        <div class="square2 square"></div>
+        <div class="square3 square"></div>
+        <div class="square4 square"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script>
+        const square = document.querySelector('.container')
+        const square1 = document.querySelector('.square1')
+
+        const square2 = document.querySelector('.square2')
+        const square3 = document.querySelector('.square3')
+        const square4 = document.querySelector('.square4')
+
+
+
+
+        const tl = gsap.timeline({
+            default: {
+                ease: 'power4.inOut', duration: 1
+            }, repeat: -1, // Infinite repeat
+            repeatDelay: .1,
+            yoyo: true
+        })
+        tl
+
+            .to(square1, {
+                backgroundImage: ' linear-gradient(to right bottom, rgb(67, 255, 67), rgb(118, 255, 118), rgb(187, 255, 187))',
+                transform: `translate(-20px,-20px)`,
+                ease: 'power4.inOut',
+
+
+                duration: .5
+            }, '+=.1')
+            .to(square2, {
+                backgroundImage: ' linear-gradient(to right bottom, rgb(67, 255, 67), rgb(118, 255, 118), rgb(187, 255, 187))',
+                transform: `translate(20px,-20px)`,
+                ease: 'power4.inOut',
+
+
+                duration: .5
+            }, '<')
+            .to(square3, {
+                backgroundImage: ' linear-gradient(to right bottom, rgb(67, 255, 67), rgb(118, 255, 118), rgb(187, 255, 187))',
+                transform: `translate(-20px,20px)`,
+                ease: 'power4.inOut',
+
+
+                duration: .5
+            }, '<')
+            .to(square4, {
+                backgroundImage: ' linear-gradient(to right bottom, rgb(67, 255, 67), rgb(118, 255, 118), rgb(187, 255, 187))',
+                transform: `translate(20px,20px)`,
+                ease: 'power4.inOut',
+
+                duration: .5
+            }, '<')
+            .to(square1, {
+                backgroundImage: ' linear-gradient(to right bottom, rgb(255, 120, 219), rgb(255, 172, 233), rgb(255, 240, 251))',
+
+                duration: .5, transform: 'rotate(90deg)',
+                ease: 'power4.inOut'
+            }, '+=.1')
+            .to(square2, {
+                backgroundImage: ' linear-gradient(to right bottom, rgb(255, 120, 219), rgb(255, 172, 233), rgb(255, 240, 251))',
+                duration: .5, transform: 'rotate(90deg)',
+                ease: 'power4.inOut'
+            }, '<')
+            .to(square3, {
+                backgroundImage: ' linear-gradient(to right bottom, rgb(255, 120, 219), rgb(255, 172, 233), rgb(255, 240, 251))',
+                transform: 'rotate(90deg)',
+                duration: .5,
+                ease: 'power4.inOut'
+            }, '<')
+            .to(square4, {
+                backgroundImage: ' linear-gradient(to right bottom, rgb(255, 120, 219), rgb(255, 172, 233), rgb(255, 240, 251))',
+                transform: 'rotate(90deg)',
+                duration: .5,
+                ease: 'power4.inOut'
+            }, '<')
+
+
+
+    </script>
+</body>
+
+</html>
